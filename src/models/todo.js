@@ -11,11 +11,11 @@ const Todo = mongoose.model('Todo', {
     },
     description : {
         type:String,
-        require:false,
+        required:false,
     },
     status : {
         type:String,
-        require:false,
+        required:false,
     },
 });
 

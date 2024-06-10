@@ -55,6 +55,7 @@ router.delete('/todos/:id', async (req,res,next) => {
     const todoId = req.params.id;
     try{
         const todo = await Todo.findByIdAndDelete(todoId);
+        if(!todo) return res.status(404).send('Todo not found');
         res.send(todo);
     } catch (e){
         res.status(500).send(e);
