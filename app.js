@@ -20,4 +20,4 @@ app.listen(port,() => {
     console.log(`Le serveur est lancé ) : http://localhost:${port}`);
 });
 
-
+module.exports = app;

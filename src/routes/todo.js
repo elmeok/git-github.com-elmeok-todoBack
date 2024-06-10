@@ -4,9 +4,7 @@ const router = new express.Router();
 
 router.post('/todos', async (req,res,next) => {
     const todo = new Todo(req.body);
-    console.log(req.body);
-    console.log(todo);
-    todo.status = " à faire";
+    todo.status = "todo";
     try{
         const saveTodo = await todo.save();
         res.status(201).send(saveTodo);
@@ -55,7 +53,6 @@ router.patch('/todos/:id', async (req,res,next) => {
 
 router.delete('/todos/:id', async (req,res,next) => {
     const todoId = req.params.id;
-    console.log(todoId);
     try{
         const todo = await Todo.findByIdAndDelete(todoId);
         res.send(todo);

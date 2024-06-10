@@ -1,0 +1,1 @@
+enum todoStatus {"todo","done","inProgress"};
